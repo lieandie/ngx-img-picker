@@ -1,1 +1,4 @@
-<input type="file" accept="image/*">
+<input #imageInput type="file" accept="image/**" (change)="upload()">
+<div class="preview">
+  <canvas #canvas></canvas>
+</div>
