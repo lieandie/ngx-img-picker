@@ -1,4 +1,10 @@
-<input #imageInput type="file" accept="image/**" (change)="upload()">
-<div class="preview">
-  <canvas #canvas></canvas>
+<input #imageInput type="file" accept="image/**" (change)="upload()" [multiple]="multiple">
+<div *ngIf="images?.length > 0" class="preview-container">
+  <div *ngFor="let image of images" class="preview preview-mdl">
+    <img src="{{image.src}}">
+  </div>
+  <!-- <canvas #canvas></canvas> -->
+  <!-- <div class="edit">
+    <button class="button">Редактировать</button>
+  </div> -->
 </div>

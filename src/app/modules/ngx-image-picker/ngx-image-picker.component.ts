@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 @Component({
   selector: 'app-image-picker',
@@ -10,30 +10,39 @@ export class NgxImagePickerComponent implements OnInit {
   @ViewChild('imageInput') imageInput;
   @ViewChild('canvas') canvas;
 
-  private image;
+  @Input() multiple: boolean;
+
+  images: any[];
 
   constructor() { }
 
   ngOnInit() {
-    this.image = new Image();
-    this.image.onload = e => this.drawCanvas();
+    this.images = [];
+    // this.image = new Image();
+    // this.image.onload = e => this.drawCanvas();
   }
 
   private upload() {
     const inputElement = this.imageInput.nativeElement;
-    if (inputElement.files && inputElement.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => this.image.src = e.target.result;
-      reader.readAsDataURL(inputElement.files[0]);
+    if (inputElement.files) {
+      for (let i = 0; i < inputElement.files.length; i++) {
+        const reader = new FileReader();
+        const image = new Image();
+        reader.onload = (e: any) => {
+          image.src = e.target.result;
+          this.images.push(image);
+        };
+        reader.readAsDataURL(inputElement.files[i]);
+      }
     }
   }
 
-  private drawCanvas() {
+  private drawCanvas(image) {
     const canvas = this.canvas.nativeElement;
     const ctx = canvas.getContext('2d');
-    canvas.width = this.image.width;
-    canvas.height = this.image.height;
-    ctx.drawImage(this.image, 0, 0);
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctx.drawImage(image, 0, 0);
   }
 
 }
