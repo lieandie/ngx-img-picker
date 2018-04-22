@@ -1,1 +1,2 @@
-<app-image-picker [multiple]="true"></app-image-picker>
+<app-img-picker [multiple]="true" (imgLoaded)="imagesLoaded($event)"></app-img-picker>
+<app-img-preview [images]="images"></app-img-preview>

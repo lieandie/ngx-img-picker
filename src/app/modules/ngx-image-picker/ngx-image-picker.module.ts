@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxImagePickerComponent } from './ngx-image-picker.component';
+import { NgxImagePickerComponent } from './img-picker/ngx-image-picker.component';
+import { ImgPreviewComponent } from './img-preview/img-preview.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [NgxImagePickerComponent],
+  declarations: [NgxImagePickerComponent, ImgPreviewComponent],
   exports: [
-    NgxImagePickerComponent
+    NgxImagePickerComponent,
+    ImgPreviewComponent
   ]
 })
 export class NgxImagePickerModule { }
