@@ -4,8 +4,13 @@
     border: 2px dashed #ccc;
     width: 100%;
     font-family: sans-serif;
+    cursor: pointer;
 }
 
-#imageInput {
+label {
+    cursor: pointer;
+}
+
+input {
     display: none;
 }

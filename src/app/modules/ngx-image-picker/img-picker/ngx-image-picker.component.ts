@@ -10,6 +10,7 @@ export class NgxImagePickerComponent implements OnInit {
   @Input() private multiple: boolean;
   @Output() private imgLoaded: EventEmitter<HTMLImageElement[]> = new EventEmitter<HTMLImageElement[]>();
   @ViewChild('dropArea') dropArea: ElementRef;
+  @ViewChild('imageInput') imageInput: ElementRef;
 
   private images: HTMLImageElement[];
 
@@ -44,6 +45,9 @@ export class NgxImagePickerComponent implements OnInit {
     });
     this.dropArea.nativeElement.addEventListener('drop', (event) => {
       this.upload(event.dataTransfer.files);
+    }, false);
+    this.dropArea.nativeElement.addEventListener('click', (event) => {
+      this.imageInput.nativeElement.click();
     }, false);
   }
 

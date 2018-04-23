@@ -1,4 +1,8 @@
 <div class="drop-area" #dropArea>
-        <input id="imageInput" #imageInput type="file" accept="image/**" (change)="upload(imageInput.files)" [multiple]="multiple">
-        <label class="button" for="imageInput">Click or drag here</label>
+        <div>
+                <span>
+                        Click or drop here
+                </span>
+        </div>
+        <input #imageInput type="file" accept="image/**" (change)="upload(imageInput.files)" [multiple]="multiple">
 </div>
