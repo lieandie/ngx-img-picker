@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
 
   imagesLoaded(images) {
     this.images = images;
-    console.log(this.images);
   }
 
 }

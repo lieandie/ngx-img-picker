@@ -7,31 +7,44 @@ import { Component, OnInit, ViewChild, Input, ElementRef, Output, EventEmitter }
 })
 export class NgxImagePickerComponent implements OnInit {
 
-  @ViewChild('imageInput') imageInput: ElementRef;
-  @Input() multiple: boolean;
-  @Output() imgLoaded: EventEmitter<HTMLImageElement[]> = new EventEmitter<HTMLImageElement[]>();
+  @Input() private multiple: boolean;
+  @Output() private imgLoaded: EventEmitter<HTMLImageElement[]> = new EventEmitter<HTMLImageElement[]>();
+  @ViewChild('dropArea') dropArea: ElementRef;
 
-  images: HTMLImageElement[];
+  private images: HTMLImageElement[];
 
   constructor() { }
 
   ngOnInit() {
+    this.dropAreaInit();
   }
 
-  private upload() {
+  private upload(files: FileList) {
     const images: HTMLImageElement[] = [];
-    const inputElement: HTMLInputElement = this.imageInput.nativeElement;
-    if (inputElement.files) {
-      for (let i = 0; i < inputElement.files.length; i++) {
+    if (files) {
+      for (let i = 0; i < files.length; i++) {
         const reader = new FileReader();
         const image = new Image();
         reader.onload = (e: any) => {
           image.src = e.target.result;
           images.push(image);
         };
-        reader.readAsDataURL(inputElement.files[i]);
+        reader.readAsDataURL(files[i]);
       }
       this.imgLoaded.emit(images);
     }
   }
+
+  private dropAreaInit() {
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      this.dropArea.nativeElement.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+      }, false);
+    });
+    this.dropArea.nativeElement.addEventListener('drop', (event) => {
+      this.upload(event.dataTransfer.files);
+    }, false);
+  }
+
 }
