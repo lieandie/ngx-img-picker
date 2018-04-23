@@ -34,13 +34,13 @@
     width: 256px;
     max-width: 100%;
     max-height: 256px;
+    min-height: 256px;
 }
 
 .preview-mdl > img {
     width: 128px;
     max-width: 100%;
     max-height: 128px;
-    min-width: 100%;
     min-height: 128px;
 }
 
@@ -48,6 +48,7 @@
     width: 64px;
     max-width: 100%;
     max-height: 64px;
+    min-height: 256px;
 }
 
 .preview:hover {
