@@ -8,7 +8,6 @@ import { Component, OnInit, ViewChild, Input, ElementRef, Output, EventEmitter }
 export class NgxImagePickerComponent implements OnInit {
 
   @Input() private multiple: boolean;
-  @Output() private imgLoaded: EventEmitter<HTMLImageElement[]> = new EventEmitter<HTMLImageElement[]>();
   @ViewChild('dropArea') dropArea: ElementRef;
   @ViewChild('imageInput') imageInput: ElementRef;
 
@@ -17,22 +16,22 @@ export class NgxImagePickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.images = [];
     this.dropAreaInit();
   }
 
   private upload(files: FileList) {
-    const images: HTMLImageElement[] = [];
     if (files) {
       for (let i = 0; i < files.length; i++) {
         const reader = new FileReader();
         const image = new Image();
         reader.onload = (e: any) => {
           image.src = e.target.result;
-          images.push(image);
+          image.title = files[i].name;
+          this.images.push(image);
         };
         reader.readAsDataURL(files[i]);
       }
-      this.imgLoaded.emit(images);
     }
   }
 

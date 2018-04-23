@@ -1,5 +1,9 @@
-<div class="drop-area" #dropArea>
-        <div>
+<div class="input-area">
+        <div class="drop-area" #dropArea></div>
+        <div class="preview-container">
+                <app-img-preview-card *ngFor="let image of images" [image] = "image"></app-img-preview-card>
+        </div>
+        <div *ngIf="!images || images.length < 1">
                 <span>
                         Click or drop here
                 </span>
