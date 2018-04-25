@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { NgxImagePickerModule } from './modules/ngx-image-picker/ngx-image-picker.module';
+import { NgxImagePickerModule } from './modules/ngx-md-image-picker/ngx-md-image-picker.module';
 
 
 
