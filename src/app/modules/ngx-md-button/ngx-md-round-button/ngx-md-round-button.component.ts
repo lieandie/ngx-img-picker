@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-ngx-md-round-button',
@@ -8,11 +8,14 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 export class NgxMdRoundButtonComponent implements OnInit {
 
   @Input() type: number;
-  @ViewChild('button') button: HTMLButtonElement;
+  @ViewChild('button') button: ElementRef;
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+
   }
 
 }
