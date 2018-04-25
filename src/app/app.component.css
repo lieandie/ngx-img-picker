@@ -1,0 +1,12 @@
+nav a {
+  margin: 8px;
+}
+
+nav {
+  padding: 8px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+
+}
