@@ -5,7 +5,7 @@
   <div class="preview-menu-container">
     <div class="preview-menu">
       <app-ngx-md-round-button [type]="buttonTypes.edit"></app-ngx-md-round-button>
-      <app-ngx-md-round-button [type]="buttonTypes.delete"></app-ngx-md-round-button>
+      <app-ngx-md-round-button [type]="buttonTypes.delete" (md-click)="deleteEvent($event)"></app-ngx-md-round-button>
     </div>
   </div>
 </div>

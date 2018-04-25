@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-ngx-md-round-button',
@@ -9,6 +9,7 @@ export class NgxMdRoundButtonComponent implements OnInit {
 
   @Input() type: number;
   @ViewChild('button') button: ElementRef;
+  @Output('md-click') click: EventEmitter<Event> = new EventEmitter<Event>();
 
 
   constructor() {
@@ -18,4 +19,7 @@ export class NgxMdRoundButtonComponent implements OnInit {
 
   }
 
+  private clickEmit(e: Event){
+    this.click.emit(e);
+  }
 }

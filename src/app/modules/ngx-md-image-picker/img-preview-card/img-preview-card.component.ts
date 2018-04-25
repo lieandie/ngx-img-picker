@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ButtonTypes} from '../../ngx-md-button/button-types.enum';
 
 @Component({
@@ -9,11 +9,16 @@ import {ButtonTypes} from '../../ngx-md-button/button-types.enum';
 export class ImgPreviewCardComponent implements OnInit {
 
   @Input() private image: HTMLImageElement;
+  @Output() private del: EventEmitter<HTMLImageElement> = new EventEmitter();
   private buttonTypes = ButtonTypes;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  private deleteEvent(){
+    this.del.emit(this.image);
   }
 
 }

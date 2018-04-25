@@ -50,4 +50,11 @@ export class NgxImagePickerComponent implements OnInit {
     }, false);
   }
 
+  private deleteImage(img: HTMLImageElement){
+    const idx = this.images.indexOf(img);
+    if (idx > -1) {
+      this.images.splice(idx,1);
+    }
+  }
+
 }
