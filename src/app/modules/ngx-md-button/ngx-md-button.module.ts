@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxMdButtonComponent } from './ngx-md-button/ngx-md-button.component';
+import { NgxMdRoundButtonComponent } from './ngx-md-round-button/ngx-md-round-button.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [NgxMdButtonComponent]
+  declarations: [NgxMdRoundButtonComponent],
+  exports: [
+    NgxMdRoundButtonComponent
+  ]
 })
 export class NgxMdButtonModule { }

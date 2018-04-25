@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {ButtonTypes} from '../../ngx-md-button/button-types.enum';
 
 @Component({
   selector: 'app-img-preview-card',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ImgPreviewCardComponent implements OnInit {
 
   @Input() private image: HTMLImageElement;
+  private buttonTypes = ButtonTypes;
 
   constructor() { }
 
