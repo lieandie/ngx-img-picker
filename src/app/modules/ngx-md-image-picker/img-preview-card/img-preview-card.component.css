@@ -42,7 +42,7 @@
     left: 0;
     opacity: 1;
     background: transparent;
-    transform: scale(0.01);
+    transform: scale(0);
     transition:  0.25s;
 }
 
