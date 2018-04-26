@@ -1,9 +1,28 @@
-import { Component, OnInit, ViewChild, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, ElementRef} from '@angular/core';
+import {animate, sequence, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-img-picker',
   templateUrl: './ngx-image-picker.component.html',
-  styleUrls: ['./ngx-image-picker.component.css']
+  styleUrls: ['./ngx-image-picker.component.css'],
+  animations: [
+    trigger('stateAnim', [
+      transition('* => void', [
+        style({ height: '*', opacity: '1', transform: 'translateX(0)'}),
+        sequence([
+          animate(".25s ease", style({ height: '*', opacity: '.2', transform: 'scale(0.3)' })),
+          animate(".1s ease", style({ height: '0', opacity: 0, transform: 'scale(0)' }))
+        ])
+      ]),
+      transition('void => *', [
+        style({ opacity: '0', transform: 'scale(0)'}),
+        sequence([
+          animate(".1s ease", style({ opacity: '.2', transform: 'scale(0.7)'})),
+          animate(".35s ease", style({ opacity: 1, transform: 'scale(1)'  }))
+        ])
+      ])
+    ])
+  ]
 })
 export class NgxImagePickerComponent implements OnInit {
 

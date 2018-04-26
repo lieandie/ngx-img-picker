@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgxImagePickerModule } from './modules/ngx-md-image-picker/ngx-md-image-picker.module';
 import {AppRouting} from './app.routing';
 import {StandsModule} from './stands/stands.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -17,7 +18,8 @@ import {StandsModule} from './stands/stands.module';
     BrowserModule,
     NgxImagePickerModule,
     StandsModule,
-    AppRouting
+    AppRouting,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

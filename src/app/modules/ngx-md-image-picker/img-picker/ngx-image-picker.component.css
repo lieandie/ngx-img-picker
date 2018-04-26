@@ -26,3 +26,7 @@ input {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.component-wrap{
+  width: 100%;
+}

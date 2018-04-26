@@ -2,3 +2,7 @@
 body {
     background-color: #fafafa;
 }
+
+.col-6{
+  width: 50%;
+}
