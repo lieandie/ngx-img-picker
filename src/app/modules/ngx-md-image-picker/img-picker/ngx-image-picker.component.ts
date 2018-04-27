@@ -40,6 +40,9 @@ export class NgxImagePickerComponent implements OnInit {
   }
 
   private upload(files: FileList) {
+    if(!this.multiple) {
+      this.images = [];
+    }
     if (files) {
       for (let i = 0; i < files.length; i++) {
         const reader = new FileReader();

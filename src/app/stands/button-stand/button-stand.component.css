@@ -10,3 +10,8 @@ section {
   display: flex;
   flex-direction: row;
 }
+
+.stand-wrapper {
+  display: flex;
+  flex-direction: row;
+}
