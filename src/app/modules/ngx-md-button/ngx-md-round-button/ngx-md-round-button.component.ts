@@ -7,7 +7,8 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 })
 export class NgxMdRoundButtonComponent implements OnInit {
 
-  @Input() type: number;
+  @Input() type: string;
+  @Input() size: string;
   @ViewChild('button') button: ElementRef;
   @Output('md-click') click: EventEmitter<Event> = new EventEmitter<Event>();
 

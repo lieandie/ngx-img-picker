@@ -1,6 +1,6 @@
-<div class="button-container">
+<div [ngClass]="['button-container', size]">
   <button #button class="ripple md-shadow" [ngSwitch]="type" (click)="clickEmit($event)">
-    <img *ngSwitchCase="0" src="../../../../assets/assets/icon/edit.svg">
-    <img *ngSwitchCase="2" src="../../../../assets/assets/icon/delete.svg">
+    <img *ngSwitchCase="'edit'" src="../../../../assets/assets/icon/edit.svg">
+    <img *ngSwitchCase="'delete'" src="../../../../assets/assets/icon/delete.svg">
   </button>
 </div>
