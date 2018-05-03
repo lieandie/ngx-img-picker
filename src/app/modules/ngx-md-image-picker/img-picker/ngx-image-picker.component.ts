@@ -4,7 +4,7 @@ import {animate, sequence, style, transition, trigger} from '@angular/animations
 @Component({
   selector: 'app-img-picker',
   templateUrl: './ngx-image-picker.component.html',
-  styleUrls: ['./ngx-image-picker.component.css'],
+  styleUrls: ['./ngx-image-picker.component.scss'],
   animations: [
     trigger('stateAnim', [
       transition('* => void', [

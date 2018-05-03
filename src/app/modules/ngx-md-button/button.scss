@@ -15,10 +15,6 @@ button {
   transition: transform 0.25s;
 }
 
-.button-container:hover{
-  transform:translateY(-4px);
-}
-
 .ripple {
   overflow: hidden;
   position: relative;

@@ -4,7 +4,7 @@ import {ButtonTypes} from '../../ngx-md-button/button-types.enum';
 @Component({
   selector: 'app-img-preview-card',
   templateUrl: './img-preview-card.component.html',
-  styleUrls: ['./img-preview-card.component.css']
+  styleUrls: ['./img-preview-card.component.scss']
 })
 export class ImgPreviewCardComponent implements OnInit {
 
