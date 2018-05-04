@@ -3,7 +3,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 @Component({
   selector: 'app-ngx-md-round-button',
   templateUrl: './ngx-md-round-button.component.html',
-  styleUrls: ['./ngx-md-round-button.component.scss', '../button.scss']
+  styleUrls: ['./ngx-md-round-button.component.css', '../button.css']
 })
 export class NgxMdRoundButtonComponent implements OnInit {
 
